@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mymeDAO">
+
+	
+	<select id="MyMeList" parameterType="string" resultType="com.forme.biz.myme.MyMeVO">
+		SELECT * FROM MYME
+		WHERE ID = #{id}
+	</select>
+	
+	<select id="MyMeGo" parameterType="string" resultType="com.forme.biz.myme.MyMeVO">
+		SELECT * FROM MYME
+		WHERE ID = #{id} AND DELIOK = '배송 미완료'
+		
+		
+	</select>
+	
+	<update id="deliDateUpdate" parameterType="com.forme.biz.myme.MyMeVO">
+		UPDATE MYME 
+		SET DELIDATE = #{deliDate} 
+		WHERE ID = #{id} AND MYNUM = #{myNum}
+	</update>
+	
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
