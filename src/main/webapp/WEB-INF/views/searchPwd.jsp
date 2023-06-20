@@ -84,7 +84,11 @@
 				code =data;
 				auth = code;
 				console.log(auth)
+<<<<<<< HEAD
 				alert('인증번호가 전송되었습니다.');
+=======
+				alert('인증번호가 전송되었습니다. : ' + code);
+>>>>>>> refs/remotes/origin/master
 			}			
 		}); // end ajax
 

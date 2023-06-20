@@ -34,6 +34,7 @@ public class MyMeServiceImpl implements MyMeService {
 		myMeDAO.changeDeliDate(mmvo);
 	}
 
+<<<<<<< HEAD
 	@Override
 	public void okOrder(String id, String menuId, String deliAddress, String deliDate, int subPrice, int subType) {
 		System.out.println("Impl:"+id+","+menuId+","+ deliAddress+","+ deliDate+","+ subPrice+","+ subType);
@@ -45,5 +46,7 @@ public class MyMeServiceImpl implements MyMeService {
 		myMeDAO.turnUpdate(id);
 	}
 
+=======
+>>>>>>> refs/remotes/origin/master
 
 }

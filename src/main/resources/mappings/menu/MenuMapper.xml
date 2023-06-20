@@ -71,6 +71,7 @@
 	
 	<!-- 혜인님 맵퍼 시작 -->
 	<select id="getThum"  parameterType = "int" resultType="MenuVO">
+<<<<<<< HEAD
 		SELECT MENUNAME , THUMBNAIL, MCOMMENT, MENUID,SUBTYPE FROM MENU WHERE SUBTYPE = #{subType}
 	</select>
 	<select id="viewDetail"  parameterType ="int"  resultType="MenuVO">
@@ -79,6 +80,12 @@
 	
 	<select id="getJsonMenuType" parameterType="string" resultType="MenuVO">
 		SELECT MENUNAME , THUMBNAIL, MCOMMENT, MENUID, SUBTYPE FROM MENU WHERE SUBTYPE = #{subType}
+=======
+		SELECT MENUNAME , THUMBNAIL, MCOMMENT, MENUID FROM MENU WHERE SUBTYPE = #{subType}
+	</select>
+	<select id="viewDetail"  parameterType ="int"  resultType="MenuVO">
+		SELECT * FROM MENU WHERE MENUID = #{menuId}
+>>>>>>> refs/remotes/origin/master
 	</select>
 	<!-- 혜인님 맵퍼 끝 -->
 	

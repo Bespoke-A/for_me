@@ -6,6 +6,7 @@
 
 	
 	<select id="MyMeList" parameterType="string" resultType="com.forme.biz.myme.MyMeVO">
+<<<<<<< HEAD
 		SELECT *
 		FROM MYME INNER JOIN MENU
 		ON MYME.MENUID = MENU.MENUID
@@ -40,6 +41,24 @@
 		WHERE ID = #{id}
 	</select>
 	
+=======
+		SELECT * FROM MYME
+		WHERE ID = #{id}
+	</select>
+	
+	<select id="MyMeGo" parameterType="string" resultType="com.forme.biz.myme.MyMeVO">
+		SELECT * FROM MYME
+		WHERE ID = #{id} AND DELIOK = '배송 미완료'
+		
+		
+	</select>
+	
+	<update id="deliDateUpdate" parameterType="com.forme.biz.myme.MyMeVO">
+		UPDATE MYME 
+		SET DELIDATE = #{deliDate} 
+		WHERE ID = #{id} AND MYNUM = #{myNum}
+	</update>
+>>>>>>> refs/remotes/origin/master
 	
 </mapper>
 

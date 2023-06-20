@@ -41,6 +41,7 @@
         <div class="container py-5">
             <h1 class="display-3 text-white mb-3 animated slideInDown">味 메뉴</h1>
             <nav aria-label="breadcrumb animated slideInDown">
+<<<<<<< HEAD
             </nav>
         </div>
     </div>
@@ -97,6 +98,69 @@
                         <p class="mb-4 pb-2"></p>
                         <p class="mb-4 pb-2"></p>
                         <a href="subscribe.do?day=5&oDay=3" class="btn btn-primary py-3 px-5">5일 메뉴 고르러 가기&nbsp;&nbsp;=͟͟͞͞Ꙭ̮</a>
+=======
+                <ol class="breadcrumb">
+                	<!--뭐 넣을까-->
+                    <li class="breadcrumb-item"><a class="text-white" href="#">3일 구독</a></li>
+                    <li class="breadcrumb-item"><a class="text-white" href="#">5일 구독</a></li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+    <!-- Page Header End -->
+
+    <!-- 3일구독 시작 -->
+    <div class="container-xxl py-5">
+            <!--3일 사진-->
+        <div class="container about px-lg-0">
+            <div class="row g-0 mx-lg-0">
+                <div class="col-lg-6 ps-lg-0" style="min-height: 200px;">
+                    <div class="position-relative h-100">
+                        <img class="position-absolute img-fluid w-100 h-100" src="resources/img/threeMenuSub.jpg" style="object-fit: cover;" alt=" 3일">
+                    </div>
+                </div>
+                           <!--3일 특징-->
+                <div class="col-lg-6 about-text py-5 wow fadeIn" >
+                    <div class="p-lg-5 pe-lg-0">
+                        <div class="section-title text-start">
+                            <h1 class="display-5 mb-4"  style="font-size:25px;" >3일 구독은요?</h1>
+                        </div>
+                        <p class="mb-4 pb-2"style="font-size:20px;">일주일 내내 먹긴 싫고</p>
+                        <p class="mb-4 pb-2" style="font-size:20px;">하지만 나를 위해 좀 더 건강한 음식을 먹고 싶을 때</p>
+                        <p class="mb-4 pb-2" style="font-size:20px;">혼자 요리를 해먹기엔 재료가 너무 많을 때</p>
+                        <p class="mb-4 pb-2"  style="font-size:20px;">집 앞으로 맛있는 한 끼가 온다면?</p>
+                        <p class="mb-4 pb-2"></p>
+                        <p class="mb-4 pb-2"></p>
+                        <a href="threeSub.do" class="btn btn-primary py-3 px-5">3일 메뉴 고르러 가기&nbsp;&nbsp;=͟͟͞͞Ꙭ̮</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 3일구독 끝 -->
+    	 <div class="container-xxl py-5" >
+            <!--3일 사진-->
+        <div class="container about px-lg-0" >
+            <div class="row g-0 mx-lg-0">
+                <div class="col-lg-6 ps-lg-0" style="min-height: 200px;">
+                    <div class="position-relative h-100">
+                        <img class="position-absolute img-fluid w-100 h-100" src="resources/img/fiveMenuSub.jpeg" style="object-fit: cover;" alt=" 5일">
+                    </div>
+                </div>
+                           <!--3일 특징-->
+                <div class="col-lg-6 about-text py-5 wow fadeIn" >
+                    <div class="p-lg-5 pe-lg-0">
+                        <div class="section-title text-start">
+                            <h1 class="display-5 mb-4"  style="font-size:25px;" >5일 구독은요?</h1>
+                        </div>
+                        <p class="mb-4 pb-2" style="font-size:20px;">평일에 해먹기 귀찮을 때</p>
+                        <p class="mb-4 pb-2" style="font-size:20px;">매번 메뉴 고민하기 지겨우실 때</p>
+                        <p class="mb-4 pb-2" style="font-size:20px;">누가 밥 해주길 원할 때</p>
+                        <p class="mb-4 pb-2" style="font-size:20px;">집 앞으로 맛있는 한 끼가 온다면?</p>
+                        <p class="mb-4 pb-2"></p>
+                        <p class="mb-4 pb-2"></p>
+                        <a href="fiveSub.do" class="btn btn-primary py-3 px-5">5일 메뉴 고르러 가기&nbsp;&nbsp;=͟͟͞͞Ꙭ̮</a>
+>>>>>>> refs/remotes/origin/master
                     </div>
                 </div>
             </div>

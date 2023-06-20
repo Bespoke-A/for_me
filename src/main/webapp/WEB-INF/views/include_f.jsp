@@ -27,12 +27,21 @@
                     <a class="btn btn-link" href="">Terms & Condition</a>
                     <a class="btn btn-link" href="">Support</a> -->
                 </div>
+<<<<<<< HEAD
             <!--     <div class="col-lg-3 col-md-6">
                     <h4 class="text-light mb-4">Subscribe</h4>
                     <div class="position-relative mx-auto" style="max-width: 400px;">
                         <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
                     </div>
                 </div> -->
+=======
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-light mb-4">Subscribe</h4>
+                    <div class="position-relative mx-auto" style="max-width: 400px;">
+                        <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
+                    </div>
+                </div>
+>>>>>>> refs/remotes/origin/master
             </div>
         </div>
         <div class="container">

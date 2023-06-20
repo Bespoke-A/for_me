@@ -59,6 +59,7 @@ public class MemberDAO {
 		return mailChk;
 	}
 	
+<<<<<<< HEAD
 	public MemberVO myInf(String id) {
 		MemberVO vo = mybatis.selectOne("memberDAO.myInf", id);
 		return vo;
@@ -73,5 +74,13 @@ public class MemberDAO {
 	}
 	public MemberVO orderInfo(String id) {
 		return mybatis.selectOne("memberDAO.orderInfo", id);
+=======
+	public void MemberUpdate(MemberVO vo) {
+		mybatis.update("memberDAO.memberUpdate", vo);
+	}
+
+	public void MemberDelete(MemberVO vo) {
+		mybatis.delete("memberDAO.memberDelete", vo);
+>>>>>>> refs/remotes/origin/master
 	}
 }

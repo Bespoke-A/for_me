@@ -7,8 +7,12 @@
 	
 	<!-- base-package 설정위치 포함 하위 패키지 모두 검색 처리
 		여러개 선언해도 되고, 구분자(빈칸, 콤마, 세미콜른 등) -->
+<<<<<<< HEAD
 	<context:component-scan base-package="com.forme.biz.member, com.forme.biz.menu, com.forme.biz.myme, com.forme.biz.notice,
 	 com.forme.biz.reviews, com.forme.biz.admin " />
+=======
+	<context:component-scan base-package="com.forme.biz.member, com.forme.biz.menu, com.forme.biz.myme, com.forme.biz.notice, com.forme.biz.reviews " />
+>>>>>>> refs/remotes/origin/master
 	
 	<!-- 여러개 선언 방식 
 	<context:component-scan base-package="com.spring.biz.board" />

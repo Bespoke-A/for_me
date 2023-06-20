@@ -4,6 +4,7 @@
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="adminDAO">
 
+<<<<<<< HEAD
 	<!--================= 멤버 구간 ====================  -->
 	<select id="getMemberList" 
 					parameterType="adminMemberVO"
@@ -164,6 +165,10 @@ SELECT a.MENUID, b.MENUNAME AS MENUNAME
 	</select>
 	
 	<!-- 매출내역 조회 끝 -->
+=======
+	
+	
+>>>>>>> refs/remotes/origin/master
 	
 </mapper>
 

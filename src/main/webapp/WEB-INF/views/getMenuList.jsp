@@ -44,6 +44,7 @@
      				console.log(respData);
      				let dispHtml = "<ul class='menu-list'>"	
      				$.each(respData, function(index, menu){
+<<<<<<< HEAD
      					dispHtml += "<a href='adminGetMenu.do?menuId="+ this.menuId +"'><li class='menu-item'>";
      					dispHtml += "<img src=resources/forMeImg/thumb/"+this.thumbnail+" class='thumbnail'>"
      					dispHtml += "<p>" + this.menuName + "</p>";
@@ -108,6 +109,72 @@
 	            </div>
 				<div class="insert-container">
 					<a class="btn btn-primary menuinsert" href="adminInsertMenuView.do">메뉴등록 <i class="fa-solid fa-pen-to-square"></i></a>
+=======
+     					dispHtml += "<a href='getMenu.do?menuId="+ this.menuId +"'><li class='menu-item'>";
+     					dispHtml += "<img src=resources/forMeImg/thumb/"+this.thumbnail+" class='thumbnail'>"
+     					dispHtml += "<p>" + this.menuName + "</p>";
+     					dispHtml += "<p>" + this.mComment + "</p>";
+     					dispHtml += "</li></a>";
+     				});
+     				dispHtml += "</ul>";
+     				$("#dispData").html(dispHtml);
+     			},
+     			error: function() {
+     				/* alert("받아오기 실패") */
+     			}
+     		});
+     	}
+     	window.onload = function () {
+     		searchFunction();
+     	}
+     </script>
+</head>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+
+<!-- 탑바, 네비바 인클루드 -->
+<jsp:include page="/WEB-INF/views/include_h.jsp"/>
+
+
+    <!-- Page Header Start -->
+    <div class="container-fluid page-header py-5 mb-5">
+        <div class="container py-5">
+            <h1 class="display-3 text-white mb-3 animated slideInDown">메뉴 관리</h1>
+           <!--<nav aria-label="breadcrumb animated slideInDown">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a class="display-6 text-white" href="insertMenu.do">메뉴등록 <i class="fa-solid fa-pen-to-square"></i></a></li>
+                     <li class="breadcrumb-item"><a class="text-white" href="#">Pages</a></li>
+                    <li class="breadcrumb-item text-white active" aria-current="page">Our Team</li> 
+                </ol>
+            </nav> -->
+        </div>
+    </div>
+    <!-- Page Header End -->
+    
+
+	
+    <!-- Team Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="section-title text-center">
+                <h1 class="display-5 mb-5">MENU LIST</h1>
+            </div>
+            <div class="search-box">
+	            <div class="search-container">
+					<input type="text" id="searchKeyword"  size="30" placeholder="메뉴이름" onkeyup="searchFunction()"/>
+					<button class="btn-search" onclick="searchFunction()"><i class="fa-solid fa-magnifying-glass"></i></button>
+	            </div>
+				<div class="insert-container">
+					<a class="btn btn-primary menuinsert" href="insertMenuView.do">메뉴등록 <i class="fa-solid fa-pen-to-square"></i></a>
+>>>>>>> refs/remotes/origin/master
 				</div>
 			</div>
             <div class="menu-container" id="dispData">

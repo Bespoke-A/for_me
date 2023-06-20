@@ -77,6 +77,7 @@
                 </div>
                 <div class="col-lg-6 quote-text py-5 wow fadeIn" data-wow-delay="0.5s">
                     <div class="p-lg-5 pe-lg-0">
+<<<<<<< HEAD
                     	<form action="adminUpdateMenu.do" method="post" enctype="multipart/form-data">
                             <div class="row g-3">
                                 <div class="col-12">
@@ -160,6 +161,84 @@
                                     <input type="submit" class="btn btn-primary w-25 py-3" value="수정">
                                     <a href="adminDeleteMenu.do?menuId=${menu.menuId}" class="btn btn-primary w-25 py-3">삭제</a>
                                     <a href="adminGetMenuList.do" class="btn btn-primary w-25 py-3">목록</a>
+=======
+                    	<form action="updateMenu.do" method="post" enctype="multipart/form-data">
+                            <div class="row g-3">
+                                <div class="col-12">
+                                    <input class="form-control border-0" placeholder=" 메뉴이름" name="menuName" value="${menu.menuName }">
+                                </div>
+                                	
+                                <div class="col-12 col-sm-6">
+                                    <input type="text" class="form-control border-0" placeholder="메뉴아이디 : ${menu.menuId } " style="height: 55px;" readonly="readonly" >
+                                    	<input type="hidden" value="${menu.menuId }" name="menuId">	
+                                </div>
+                                
+                                <div class="col-12 col-sm-6">
+	                                <select class="form-select border-0 col-12" style="height: 55px;" name="menuType" >
+	                                        <option selected value="${menu.menuType }">메뉴타입 : ${menu.menuType }</option>
+	                                        <option value="1">1</option>
+	                                        <option value="2">2</option>
+	                                 </select>
+                                </div>
+                                 <div class="col-12 col-sm-6">
+	                                <select class="form-select border-0 col-12" style="height: 55px;" id="subType" name="subType">
+	                                        <option selected value="${menu.subType }">가격타입 : ${menu.subType}</option>
+	                                        <option value="6000">6000</option>
+	                                        <option value="8000">8000</option>
+	                                        <option value="10000">10000</option>
+	                                 </select>
+                                </div>
+                                	 
+                                	 
+                                <div class="col-12 col-sm-6">
+                                    <input type="text" class="form-control border-0" placeholder="탄수화물" value="${menu.carbohydrate}" style="height: 55px;" name="carbohydrate">
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    <input type="text" class="form-control border-0" placeholder="단백질" value="${menu.protein}" style="height: 55px;" name="protein">
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    <input type="text" class="form-control border-0" placeholder="지방" value="${menu.fat}" style="height: 55px;" name="fat">
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    <input type="text" class="form-control border-0" placeholder="나트륨" value="${menu.natrium}" style="height: 55px;" name="natrium">
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    <input type="text" class="form-control border-0" placeholder="칼로리" value="${menu.calories}" style="height: 55px;" name="calories">
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    <input type="text" class="form-control border-0" placeholder="무게" value="${menu.weight}" style="height: 55px;" name="weight">
+                                </div>
+                                <div class="col-12">
+                                    <textarea class="form-control border-0" placeholder="알레르기" name="allergy">${menu.allergy }</textarea>
+                                </div>
+                                	
+                                	<div class="col-12 col-sm-6">
+                                		<input type="text" class="form-control border-0" placeholder="기존썸네일 : ${menu.thumbnail}" readonly="readonly" name="thumbnail" value="${menu.thumbnail}" }>
+                                	</div>
+                                <div class="col-12">
+                                    <input class="form-control border-0"  type="file"  id="upload-file" name="thumbnailFIle">
+                                </div>
+                                
+                                	<div class="col-12 col-sm-6">
+                                		<input type="text" class="form-control border-0" placeholder="기존상품이미지 : ${menu.menuImg }" readonly="readonly" name="menuImg" value="${menu.menuImg }">
+                                	</div>
+                                	
+                               <div class="col-12">
+                                    <input type="file" class="form-control border-0" name="menuImgFile">
+                                </div>
+                                
+                                <div class="col-12">
+                                    <textarea class="form-control border-0" placeholder="레시피" name="recipe">${menu.recipe}</textarea>
+                                </div>
+                                <div class="col-12">
+                                    <textarea class="form-control border-0" placeholder="상세내용" name="mComment">${menu.mComment}</textarea>
+                                </div>
+                             
+                                <div class="col-12" id="btn-submit">
+                                    <input type="submit" class="btn btn-primary w-25 py-3" value="수정">
+                                    <a href="deleteMenu.do?menuId=${menu.menuId}" class="btn btn-primary w-25 py-3">삭제</a>
+                                    <a href="getMenuList.do" class="btn btn-primary w-25 py-3">목록</a>
+>>>>>>> refs/remotes/origin/master
                                 </div>
                             </div>
                         </form>

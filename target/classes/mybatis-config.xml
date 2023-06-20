@@ -12,9 +12,12 @@
 		<typeAlias type="com.forme.biz.notice.NoticeVO" alias="NoticeVO"/>
 		<typeAlias type="com.forme.biz.reviews.ReviewsVO" alias="ReviewsVO"/>
 		<typeAlias type="com.forme.biz.menu.MenuVO" alias="MenuVO"/>
+<<<<<<< HEAD
 		<typeAlias type="com.forme.biz.admin.AdminMenuVO" alias="adminMenuVO"/>
 		<typeAlias type="com.forme.biz.admin.AdminMemberVO" alias="adminMemberVO"/>
 		<typeAlias type="com.forme.biz.admin.AdminMyMeVO" alias="adminMyMeVO"/>
+=======
+>>>>>>> refs/remotes/origin/master
 	</typeAliases>
 	
 

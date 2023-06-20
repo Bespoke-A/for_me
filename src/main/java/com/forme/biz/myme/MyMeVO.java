@@ -15,6 +15,7 @@ public class MyMeVO {
 	private String deliok;
 	private int turn;
 
+<<<<<<< HEAD
 	private String menuName;
 
 	public String getMenuName() {
@@ -29,6 +30,8 @@ public class MyMeVO {
 		this.turn = turn;
 	}
 
+=======
+>>>>>>> refs/remotes/origin/master
 	public int getTurn() {
 		return turn;
 	}

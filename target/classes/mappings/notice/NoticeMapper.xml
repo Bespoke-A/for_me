@@ -2,6 +2,7 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<<<<<<< HEAD
 <mapper namespace="notice">
 	<!-- 공지 전체조회 -->
 	<select id="getNoticeList" resultType="NoticeVO">
@@ -12,6 +13,19 @@
 	<select id="searchNoticeList" parameterType="string" resultType="NoticeVO">
 		SELECT N.*, M.NAME FROM NOTICE N, MEMBERS M WHERE (M.ID = N.ID) AND (NOTICETITLE LIKE '%'|| #{searchKeyword} ||'%')
 		ORDER BY N.NOTIDATE DESC
+=======
+<mapper namespace="noticeDAO">
+	<!-- 공지 전체조회 -->
+	<select id="getNoticeList" resultType="NoticeVO">
+		SELECT * FROM NOTICE ORDER BY NOTICENUM DESC
+	</select>
+	
+	<!-- 공지 검색조회 -->
+	<select id="searchNoticeList" parameterType="string" resultType="NoticeVO">
+		SELECT * FROM NOTICE
+		WHERE NOTICETITLE LIKE '%'|| #{searchKeyword} ||'%'
+		ORDER BY NOTICENUM DESC
+>>>>>>> refs/remotes/origin/master
 	</select>
 	
 	<!-- 공지 한개조회 -->

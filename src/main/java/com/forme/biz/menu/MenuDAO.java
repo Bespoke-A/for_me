@@ -40,6 +40,7 @@ public class MenuDAO {
 		return mybatis.selectOne("menuDAO1.getMenu", vo.getMenuId());
 	}
 	
+<<<<<<< HEAD
 	
 	
 	public List<MenuVO> getMenuList(MenuVO vo) {
@@ -92,4 +93,55 @@ public class MenuDAO {
 	//혜인님 컨트롤러 끝-------------------------------------------------------------------------------------------------------------
 
 
+=======
+	public List<MenuVO> getJsonMenuList(String searchKeyword) {
+		System.out.println(" Mybatis getMenuList(vo) 실행");
+		System.out.println("menuDAO1 searchKeyword : " + searchKeyword);
+		List<MenuVO> list = null;
+		// 검색조건 값이 없을 때 기본값 설정
+		if (searchKeyword == null) {
+			searchKeyword = "";
+			System.out.println("searchKeyword : " + searchKeyword);
+		}
+		
+		if(searchKeyword != null) {
+			System.out.println("searchKeyword : " + searchKeyword);
+			list = mybatis.selectList("menuDAO1.getSearchMenuList", searchKeyword);
+		}
+		return list;
+	}
+	
+	public List<MenuVO> getMenuList(MenuVO vo) {
+		return mybatis.selectList("menuDAO1.getMenuList", vo);
+	}
+	//정회님 컨트롤러 끝-------------------------------------------------------------------------------------------------------------
+	
+	//혜인님 컨트롤러 시작-------------------------------------------------------------------------------------------------------------
+	public List<MenuVO> getThumSix() {
+		System.out.println("==> MyBatis 사용 getThumSix()실행");
+		List<MenuVO> list = null;
+		int  subType = 6000;
+		list = mybatis.selectList("menuDAO1.getThum", subType);
+		return list;
+	}
+	public List<MenuVO> getThumEight() {
+		System.out.println("==> MyBatis 사용 getThumEight()실행");
+		List<MenuVO> list = null;
+		int subType = 8000;
+		list = mybatis.selectList("menuDAO1.getThum", subType);
+		return list;
+	}
+	public List<MenuVO> getThumTen() {
+		System.out.println("==> MyBatis 사용 getThumTen()실행");
+		List<MenuVO> list = null;
+		int subType = 10000;
+		list = mybatis.selectList("menuDAO1.getThum", subType);
+		return list;
+	}
+	public MenuVO viewDetail(MenuVO vo) {
+		System.out.println("==>MyBatis 사용 getMenu()실행");
+		return mybatis.selectOne("menuDAO1.viewDetail", vo.getMenuId());
+	}
+	//혜인님 컨트롤러 끝-------------------------------------------------------------------------------------------------------------
+>>>>>>> refs/remotes/origin/master
 }

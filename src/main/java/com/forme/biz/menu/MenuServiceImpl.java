@@ -49,6 +49,7 @@ public class MenuServiceImpl implements MenuService{
 
 	@Override
 	public List<MenuVO> getJsonMenuList(String searchKeyword) {
+<<<<<<< HEAD
 		return menuDAO.getJsonMenuType(searchKeyword);
 	}
 	
@@ -90,5 +91,36 @@ public class MenuServiceImpl implements MenuService{
 		public List<MenuVO> getJsonMenuType(String menuType) {
 			return menuDAO.getJsonMenuType(menuType);
 		}
+=======
+		return menuDAO.getJsonMenuList(searchKeyword);
+	}
+	
+	
+	
+	//6000원메뉴조회
+	@Override
+	public List<MenuVO> getThumSix() {
+		return menuDAO.getThumSix();
+	}
+	//8000원메뉴조회
+	@Override
+	public List<MenuVO> getThumEight() {
+		return menuDAO.getThumEight();
+	}
+	//10000원메뉴조회	
+	@Override
+	public List<MenuVO> getThumTen() {
+		return menuDAO.getThumTen();
+	}
+	//메뉴 1개 조회
+//		@Override
+//		public MenuVO getMenu(MenuVO vo) {
+//			return menuDAO.getMenu(vo);
+//		}
+	@Override
+	public MenuVO viewDetail(MenuVO vo) {
+		return menuDAO.viewDetail(vo);
+	}
+>>>>>>> refs/remotes/origin/master
 
 }

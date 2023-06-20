@@ -8,6 +8,9 @@ public interface MyMeService {
 	List<MyMeVO> MyMe(String id); 
 	
 	void changeDeliDate(MyMeVO mmvo);
+<<<<<<< HEAD
 	void okOrder(String id, String string, String address, String string2, int subPrice, int subType);
 	void turnUpdate(String id);
+=======
+>>>>>>> refs/remotes/origin/master
 }

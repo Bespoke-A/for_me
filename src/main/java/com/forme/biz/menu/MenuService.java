@@ -17,6 +17,9 @@ public interface MenuService {
 	List<MenuVO> getThumEight();
 	List<MenuVO> getThumTen();
 	MenuVO viewDetail(MenuVO vo);
+<<<<<<< HEAD
 	List<MenuVO> choice(int subType);
 	List<MenuVO> getJsonMenuType(String menuType);
+=======
+>>>>>>> refs/remotes/origin/master
 }

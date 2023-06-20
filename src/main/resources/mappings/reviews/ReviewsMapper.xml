@@ -2,6 +2,7 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<<<<<<< HEAD
 <mapper namespace="reviews">
 	<!-- 리뷰 전체조회 -->
 	<select id="getReviewsList" resultType="ReviewsVO">
@@ -42,3 +43,33 @@
 	</select>
 	
 </mapper>
+=======
+<mapper namespace="reviewsDAO">
+	<!-- 리뷰 전체조회 -->
+	<select id="getReviewsList" resultType="ReviewsVO">
+		SELECT R.*, S.NAME, M.ID, U.MENUNAME FROM REVIEWS R, MYME M, MEMBERS S, MENU U 
+		WHERE (M.MENUID = U.MENUID) AND (S.ID = M.ID) AND (R.MYNUM = M.MYNUM)
+	</select>
+	
+	<!-- 내 리뷰 보기 -->
+	<select id="getMyReviewList" resultType="ReviewsVO" parameterType="String">
+		SELECT R.*, S.NAME, M.ID, U.MENUNAME FROM REVIEWS R, MYME M, MEMBERS S, MENU U 
+		WHERE (M.MENUID = U.MENUID) AND (S.ID = M.ID) AND (R.MYNUM = M.MYNUM) AND (M.ID = #{id})
+	</select>
+	
+	<!-- 리뷰 삭제 -->
+	<delete id="delRev" parameterType="int">
+		DELETE FROM REVIEWS WHERE REVIEWNUM = #{reviewNum}
+	</delete>
+	
+</mapper>
+
+
+
+
+
+
+
+
+
+>>>>>>> refs/remotes/origin/master

@@ -76,6 +76,7 @@
 					alert("이미 사용중인 이메일 입니다.");
 					mailChkCnt = 0;
 				} else {
+<<<<<<< HEAD
 					alert('인증번호가 전송되었습니다.');
 					mailChkCnt = 1;
 				}
@@ -219,6 +220,151 @@
                             <div class="row g-3">
                                 <div class="col-12 col-sm-6">
                                     <input type="text" id="id" name="id" class="form-control border-0" placeholder="아이디  6~12자리" onkeydown="chkSpace()" title="아이디 " maxlength="12" style="height: 55px;">
+=======
+					alert('인증번호가 전송되었습니다. : ' + code);
+					mailChkCnt = 1;
+				}
+			}			
+		}); // end ajax
+
+    }
+	function registerGo(frm) {
+		let email = "";
+		let pwd1 = $("#pwd1").val();
+    	let pwd2 = $("#pwd2").val();
+    	let reg = /^(?=.*[a-zA-Z])(?=.*[0-9]).{6,12}$/
+		let firstForm = document.forms[0];
+    	let hpLength = firstForm.elements[7].value.trim().length;
+		console.log(firstForm.elements);
+	 	for (let i = 0; i < 20; i++) {
+	 		if(firstForm.elements[i].value.trim() == "성별"
+	 				|| firstForm.elements[i].value.trim() == "년"
+	 				|| firstForm.elements[i].value.trim() == "월"
+	 				|| firstForm.elements[i].value.trim() == "일"){
+	 			firstForm.elements[i].focus();
+	 			alert(firstForm.elements[i].title + " 입력하세요");
+				return;
+				}
+			if (firstForm.elements[i].value.trim() == "") {
+				if ( i == 1 || i == 3 || i == 5 || i == 12 || i == 14) continue;
+				firstForm.elements[i].focus();
+				alert(firstForm.elements[i].title + " 입력하세요");
+				return;
+			}
+		}  
+	 	if(!reg.test(pwd1)){
+	 		alert("비밀번호를 양식에 맞춰 입력하세요");
+	 		document.getElementById("pwd1").focus();
+	 		return;
+	 	}
+	 	if(pwd1 != pwd2){
+	 		alert("동일한 비밀번호를 입력하세요");
+	 		document.getElementById("pwd2").focus();
+	 		return;
+	 	}
+		if(frm.domain.value == 'directly' || frm.domain.value == 'select'){
+			let directly = document.getElementById("textEmail").value
+			email = frm.email1.value + "@" + frm.directly.value;
+			frm.email.value = email;
+		} else if (frm.email1.value != "" && frm.domain.value != 'directly') {
+			email = frm.email1.value + "@" + frm.domain.value;
+			frm.email.value = email;
+		}
+		if (frm.yy.value != "년" && frm.mm.value != "월" && frm.dd.value != "일") {
+	    	let birth = frm.yy.value + frm.mm.value + frm.dd.value;
+    		frm.birth.value = birth;
+		}
+		if(frm.firstAaddress.value != ""){
+			let address = frm.firstAaddress.value + " " + frm.detailAddress.value;
+    		frm.address.value = address;
+		}
+		if(idChkCnt == 0){
+			alert("아이디 중복체크를 해주세요");
+			document.getElementById("idChk").focus();
+			return;
+		}
+		if(idChkbool == false){
+			alert("유효한 아이디를 입력하세요");
+			document.getElementById("idChk").focus();
+			return;
+		}
+		if(hpLength < 13){
+			alert("휴대폰번호를 확인해주세요");
+			document.getElementById("hp").focus();
+			return;
+		}
+		if(auth === "0"){
+    		alert("이메일 인증을 진행해 주세요");
+    		return;
+    	}
+    	const inputCode = $('#certification').val();
+    	if(inputCode !== auth) {
+			alert('인증번호가 불일치 합니다. 다시 확인해주세요.');
+			document.getElementById("certification").focus();
+			return;
+		}
+    	if(mailChkCnt == 0){
+    		alert("이메일 인증을 진행해 주세요");
+    		return;
+    	}
+		document.getElementById("id").removeAttribute('disabled');
+		frm.action = "register.do"
+		frm.method = "post";
+		frm.submit();
+	}
+    </script>
+</head>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+
+<!-- 탑바, 네비바 인클루드 -->
+<jsp:include page="/WEB-INF/views/include_h.jsp"/>
+
+
+    <!-- Page Header Start -->
+    <div class="container-fluid page-header py-5 mb-5">
+        <div class="container py-5">
+            <h1 class="display-3 text-white mb-3 animated slideInDown">회원가입</h1>
+            <nav aria-label="breadcrumb animated slideInDown">
+                <!-- <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a class="text-white" href="#">Home</a></li>
+                    <li class="breadcrumb-item"><a class="text-white" href="#">Pages</a></li>
+                    <li class="breadcrumb-item text-white active" aria-current="page">Free Quote</li>
+                </ol> -->
+            </nav>
+        </div>
+    </div>
+    <!-- Page Header End -->
+
+
+    <!-- 회원가입 Start -->
+    <div class="container-fluid bg-light overflow-hidden px-lg-0" style="margin: 6rem 0;">
+        <div class="container quote px-lg-0">
+            <div class="row g-0 mx-lg-0">
+                <div class="col-lg-6 ps-lg-0" style="min-height: 400px;">
+                    <div class="position-relative h-100">
+                        <img class="position-absolute img-fluid w-100 h-100" src="resources/img/signup.jpg" style="object-fit: cover;" alt="">
+                    </div>
+                </div>
+                <div class="col-lg-6 quote-text py-5 wow fadeIn" data-wow-delay="0.5s">
+                    <div class="p-lg-5 pe-lg-0">
+                        <div class="section-title text-start">
+                            <h1 class="display-5 mb-4">회원가입</h1>
+                        </div>
+                        <p class="mb-4 pb-2"></p>
+                        <form method="post" autocomplete="off">
+                            <div class="row g-3">
+                                <div class="col-12 col-sm-6">
+                                    <input type="text" id="id" name="id" class="form-control border-0" placeholder="아이디 영문, 숫자  6~12자리" onkeydown="chkSpace()" title="아이디 " maxlength="12" style="height: 55px;">
+>>>>>>> refs/remotes/origin/master
                                 </div>
                                 <div class="col-12 col-sm-6">
                                     <input type="button" id="idChk" value="아이디 중복체크" onclick="idChkGo()" class="btn btn-primary w-100 py-3" placeholder="아이디"  style="height: 55px;">

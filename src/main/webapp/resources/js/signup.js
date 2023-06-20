@@ -114,6 +114,7 @@
     	let idChk = document.getElementById("id").value;
 		let url = "idChk.do";
 		let vo = { id: idChk};
+<<<<<<< HEAD
 		let reg = /^(?=.*[a-zA-Z]).{6,12}$/
 		$.ajax(url,{
 			type: "post",
@@ -144,6 +145,38 @@
 				}
 				if (idChk.length < 6 || !reg.test(idChk)) {
 					alert("아이디는 6~12자로 입력해주세요.");
+=======
+		let reg = /^(?=.*[a-zA-Z])(?=.*[0-9]).{6,12}$/
+		$.ajax(url,{
+			type: "post",
+			data: JSON.stringify(vo), // 서버쪽 전달 데이터(JSON 문자열)
+			contentType: "application/json", //서버로 전송하는 컨텐츠 유형(JSON형식)
+			dataType: "json", // 응답받을 데이터 타입
+			success: function(respData){
+				console.log(respData);
+				if (respData == false) {
+					alert("이미 사용중인 아이디 입니다.");
+					idChkbool = false;
+					idChkCnt = 0;
+					return;
+				} 
+				if (respData == true && idChk.length > 5 && reg.test(idChk)) {
+					//alert("사용 가능한 아이디 입니다.");
+					let answer = confirm("사용 가능한 아이디 입니다. 이 아이디를 사용하시겠습니까?");
+					if(answer){
+						document.getElementById("id").setAttribute('disabled', true);
+						idChkbool = true;
+						idChkCnt = 1;
+					} else if(!answer) {
+						document.getElementById("id").removeAttribute('disabled');
+						idChkbool = false;
+						idChkCnt = 0;
+					}
+					
+				}
+				if (idChk.length < 6 || !reg.test(idChk)) {
+					alert("아이디는 영문,숫자 6~12자로 입력해주세요.");
+>>>>>>> refs/remotes/origin/master
 					return;
 				}
 			},

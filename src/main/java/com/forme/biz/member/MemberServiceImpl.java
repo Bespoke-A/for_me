@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 public class MemberServiceImpl implements MemberService {
 	@Autowired
 	private MemberDAO memberDAO;
+<<<<<<< HEAD
 
 	public MemberServiceImpl() {
 		System.out.println(":: MemberServiceImpl() 객체 생성");
@@ -70,6 +71,49 @@ public class MemberServiceImpl implements MemberService {
 	public MemberVO orderInfo(String id) {
 		MemberVO vo = memberDAO.orderInfo(id);
 		return vo;
+=======
+	public MemberServiceImpl() {
+		System.out.println(":: MemberServiceImpl() 객체 생성");
+	}
+	@Override
+	public void register(MemberVO vo) {
+		memberDAO.register(vo);
+		
+	}
+	@Override
+	public String idChk(MemberVO vo) {
+		String idChk = memberDAO.idChk(vo);
+		return idChk;
+	}
+	@Override
+	public MemberVO login(MemberVO vo) {
+		MemberVO user = memberDAO.login(vo);
+		return user;
+	}
+	@Override
+	public String searchIdOk(MemberVO vo) {
+		String searchId = memberDAO.searchIdOk(vo);
+		return searchId;
+	}
+	@Override
+	public MemberVO searchPwdOk(MemberVO vo) {
+		MemberVO searchPwd = memberDAO.searchPwdOk(vo);
+		return searchPwd;
+	}
+	@Override
+	public String mailChk(String email) {
+		String mailChk = memberDAO.mailChk(email);
+		return mailChk;
+	}
+	@Override
+	public void MemberUpdate(MemberVO vo) {
+		memberDAO.MemberUpdate(vo);
+	}
+
+	@Override
+	public void MemberDelete(MemberVO vo) {
+		memberDAO.MemberDelete(vo);		
+>>>>>>> refs/remotes/origin/master
 	}
 
 }

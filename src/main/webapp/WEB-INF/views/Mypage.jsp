@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<<<<<<< HEAD
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <!DOCTYPE html>
 <html lang="UTF-8">
@@ -172,6 +173,127 @@ table {
 	</div>
 	</div>
 	 
+=======
+<!DOCTYPE html>
+<html lang="UTF-8">
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
+<head>
+<meta charset="UTF-8">
+<title>for味</title>
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<meta content="" name="keywords">
+<meta content="" name="description">
+
+<!-- Favicon -->
+<link href="resources/img/favicon.ico" rel="icon">
+
+<!-- Google Web Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+	href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&family=Roboto:wght@500;700;900&display=swap"
+	rel="stylesheet">
+
+<!-- Icon Font Stylesheet -->
+<link
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+	rel="stylesheet">
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"
+	rel="stylesheet">
+
+<!-- Libraries Stylesheet -->
+<link href="resources/lib/animate/animate.min.css" rel="stylesheet">
+<link href="resources/lib/owlcarousel/assets/owl.carousel.min.css"
+	rel="stylesheet">
+<link href="resources/lib/lightbox/css/lightbox.min.css"
+	rel="stylesheet">
+
+<!-- Customized Bootstrap Stylesheet -->
+<link href="resources/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Template Stylesheet -->
+<link href="resources/css/style.css" rel="stylesheet">
+
+
+<style>
+#position {
+	margin: 0 auto;
+}
+</style>
+
+
+</head>
+
+<body>
+	<!-- Spinner Start -->
+	<div id="spinner"
+		class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+		<div class="spinner-grow text-primary"
+			style="width: 3rem; height: 3rem;" role="status">
+			<span class="sr-only">Loading...</span>
+		</div>
+	</div>
+	<!-- Spinner End -->
+
+	<!-- 탑바, 네비바 인클루드 -->
+	<jsp:include page="include_h.jsp" />
+
+
+
+
+
+	<!-- 메뉴 뿌리기 시작 -->
+	<div class="container-xxl py-5">
+		<div class="container">
+			<div class="section-title text-center">
+				<h1 class="display-5 mb-5">회원 정보</h1>
+			</div>
+
+
+			<div id="position"
+				class="col-lg-4 col-md-6 portfolio-item first wow fadeInUp"
+				data-wow-delay="0.3s">
+				<div class="rounded overflow-hidden">
+					<div class="position-relative overflow-hidden"></div>
+					<div class="border border-5 border-light border-top-0 p-4">
+						<h5 class="lh-base mb-0">
+							<ul>
+								<li>ID : ${Member.id }</li>
+								<li>생년월일 : ${fn:substring(user.birth,0,10) }</li>
+								<li>주소 : ${user.address }</li>
+								<li>이름 : ${user.name }</li>
+								<li>전화번호 : ${user.hp }</li>
+								<li>성별 : ${user.gender }</li>
+								<li>EMAIL : ${user.email }</li>
+							</ul>
+					</div>
+				</div>
+			</div>
+			<div>
+				<form action="UpdateOK.do">
+					<button>회원 정보 수정</button>
+				</form>
+			</div>
+			<div>
+				<form action="DeleteOK.do">
+					<button>회원 탈퇴</button>
+				</form>
+			</div>
+			<div>
+				<form action="MyList.do">
+					<button>결제내역 보러가기</button>
+				</form>
+			</div>
+			<div>
+				<form action="MyMe.do">
+					<button>나의 식단 일정 보러가기</button>
+				</form>
+			</div>
+		</div>
+	</div>
+	</div>
+>>>>>>> refs/remotes/origin/master
 	<!-- 메뉴 뿌리기 끝 -->
 
 

@@ -38,6 +38,7 @@ public class ReviewsImpl implements ReviewsService{
 		reviewsDAO.delRev(reviewNum);
 	}
 	
+<<<<<<< HEAD
 	// 리뷰 수정
 	@Override
 	public void upRev(ReviewsVO vo) {
@@ -66,5 +67,7 @@ public class ReviewsImpl implements ReviewsService{
 		return reviewsDAO.searchRev(myNum);
 	}
 	
+=======
+>>>>>>> refs/remotes/origin/master
 }
 

@@ -32,6 +32,7 @@
 	<select id="mailChk" parameterType="string" resultType="string">
 		SELECT ID FROM MEMBERS WHERE EMAIL = #{email}
 	</select>
+<<<<<<< HEAD
 
 	<select id="myInf" parameterType="string" resultType="MemberVO">
 		SELECT * FROM MEMBERS WHERE ID = #{id}
@@ -51,6 +52,21 @@
 	<select id="orderInfo" parameterType = "String" resultType ="MemberVO">
 		SELECT NAME,HP,EMAIL,ADDRESS FROM MEMBERS WHERE ID = #{id}
 	</select>
+=======
+	
+	<update id="memberUpdate" parameterType="MemberVO">
+		UPDATE MEMBERS 
+		SET BIRTH = #{birth}, 
+            ADDRESS = #{address},
+		     HP = #{hp},
+             EMAIL = #{email}
+		WHERE ID = #{id} 
+	</update>
+	
+	<delete id="memberDelete" parameterType="MemberVO">
+		DELETE FROM MEMBERS WHERE ID = #{id}
+	</delete>
+>>>>>>> refs/remotes/origin/master
 	
 </mapper>
 

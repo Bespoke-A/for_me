@@ -18,6 +18,7 @@ public class NoticeDAO {
 	//공지사항 리스트
 	public List<NoticeVO> getNoticeList() {
 		System.out.println("===> MyBatis 사용 getNoticeList() 실행");
+<<<<<<< HEAD
 		return mybatis.selectList("notice.getNoticeList");
 	}
 	//공지사항 검색
@@ -50,5 +51,38 @@ public class NoticeDAO {
 		return result;
 	}
 	
+=======
+		return mybatis.selectList("noticeDAO.getNoticeList");
+	}
+	//공지사항 검색
+	public List<NoticeVO> searchNoticeList(String searchKeyword) {
+		System.out.println("===> MyBatis 사용 searchNoticeList() 실행");
+		return mybatis.selectList("noticeDAO.searchNoticeList", searchKeyword);
+	}
+	//공지사항 상세
+	public NoticeVO getNoticeOne(int noticeNum) {
+		System.out.println("===> MyBatis 사용 getNoticeOne() 실행"); //return
+		NoticeVO vo = mybatis.selectOne("noticeDAO.getNoticeOne", noticeNum); 
+		return vo;
+	}
+	//공지 입력
+	public int insertNotice(NoticeVO vo) {
+		System.out.println("===> MyBatis 사용 insertNotice() 실행"); //return
+		int result = mybatis.insert("noticeDAO.insertNotice", vo);
+		return result;
+	}
+	//공지 수정
+	public int updateNotice(NoticeVO vo) {
+		System.out.println("===> MyBatis 사용 updateNotice() 실행"); //return
+		int result = mybatis.update("noticeDAO.updateNotice", vo);
+		return result;
+	}
+	//공지 삭제
+	public int deleteNotice(NoticeVO vo) {
+		System.out.println("===> MyBatis 사용 deleteNotice() 실행"); //return
+		int result = mybatis.delete("noticeDAO.deleteNotice", vo);
+		return result;
+	}
+>>>>>>> refs/remotes/origin/master
 	
 }

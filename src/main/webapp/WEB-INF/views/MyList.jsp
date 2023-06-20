@@ -51,6 +51,7 @@
 .box {
 	border: 2px solid black;
 }
+<<<<<<< HEAD
 
 #side {
 	position: relative;
@@ -191,6 +192,70 @@
 		</div>
 		<div></div>
 	</div>
+=======
+</style>
+
+
+</head>
+
+<body>
+	<!-- Spinner Start -->
+	<div id="spinner"
+		class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+		<div class="spinner-grow text-primary"
+			style="width: 3rem; height: 3rem;" role="status">
+			<span class="sr-only">Loading...</span>
+		</div>
+	</div>
+	<!-- Spinner End -->
+
+	<!-- 탑바, 네비바 인클루드 -->
+	<jsp:include page="include_h.jsp" />
+
+
+
+
+
+	<!-- 메뉴 뿌리기 시작 -->
+	<div class="container-xxl py-5">
+		<div class="container">
+			<div class="section-title text-center">
+				<h1 class="display-5 mb-5">나의 상품결제내역</h1>
+			</div>
+
+
+			<div id="position"
+				class="col-lg-4 col-md-6 portfolio-item first wow fadeInUp"
+				data-wow-delay="0.3s">
+				<div class="rounded overflow-hidden">
+					<div class="position-relative overflow-hidden"></div>
+					<div class="border border-5 border-light border-top-0 p-4">
+						<h5 class="lh-base mb-0">
+							<ul>
+								<c:if test="${empty mymeList }">
+									<h5>결제 내역이 없습니다</h5>
+								</c:if>
+
+								<c:forEach var="vList" items="${mymeList }" varStatus="turn">
+									<div class="box">
+										<c:if test="${vList.turn eq turn.index}">
+											<c:forEach var="mList" items="${mymeList }">
+												<li>${mList.menuId }/${mList.deliAddress}/${fn:substring(mList.deliDate,0,10) }/
+													${mList.subPrice }/${fn:substring(mList.startDate,0,10) }/${fn:substring(mList.endDate,0,10) }
+													/${mList.deliok }/${mList.turn }</li>
+											</c:forEach>
+										</c:if>
+									</div>
+								</c:forEach>
+
+
+							</ul>
+					</div>
+				</div>
+			</div>
+			<div></div>
+		</div>
+>>>>>>> refs/remotes/origin/master
 	</div>
 	</div>
 	<!-- 메뉴 뿌리기 끝 -->

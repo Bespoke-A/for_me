@@ -7,7 +7,13 @@ public interface NoticeService {
 	List<NoticeVO> getNoticeList(); //공지 리스트
 	List<NoticeVO> searchNoticeList(String searchKeyword); //공지 검색
 	NoticeVO getNoticeOne(int noticeNum); //공지 상세
+<<<<<<< HEAD
 	int insertNotice(NoticeVO vo); //공지 입력
 	int updateNotice(NoticeVO vo); //공지 수정
 	int deleteNotice(NoticeVO vo); //공지 삭제
+=======
+	int insertNotice(NoticeVO vo);
+	int updateNotice(NoticeVO vo);
+	int deleteNotice(NoticeVO vo);
+>>>>>>> refs/remotes/origin/master
 }

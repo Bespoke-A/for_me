@@ -46,6 +46,7 @@
 #position {
 	margin: 0 auto;
 }
+<<<<<<< HEAD
 
 #side {
 	position: relative;
@@ -142,6 +143,52 @@
 									<input type="text" name="password">
 								</ul>
 								<button type="submit" style="float: right;">회원탈퇴</button>
+=======
+</style>
+
+
+</head>
+
+<body>
+	<!-- Spinner Start -->
+	<div id="spinner"
+		class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+		<div class="spinner-grow text-primary"
+			style="width: 3rem; height: 3rem;" role="status">
+			<span class="sr-only">Loading...</span>
+		</div>
+	</div>
+	<!-- Spinner End -->
+
+	<!-- 탑바, 네비바 인클루드 -->
+	<jsp:include page="include_h.jsp" />
+
+
+
+
+
+	<!-- 메뉴 뿌리기 시작 -->
+	<div class="container-xxl py-5">
+		<div class="container">
+			<div class="section-title text-center">
+				<h1 class="display-5 mb-5">회원 탈퇴</h1>
+			</div>
+
+
+			<div id="position"
+				class="col-lg-4 col-md-6 portfolio-item first wow fadeInUp"
+				data-wow-delay="0.3s">
+				<div class="rounded overflow-hidden">
+					<div class="position-relative overflow-hidden"></div>
+					<div class="border border-5 border-light border-top-0 p-4">
+						<h5 class="lh-base mb-0">
+							<form action="Delete.do" method="post">
+								<ul>
+									<h4>회원탈퇴를 위한 비밀번호를 입력해주세요.</h4>
+									<input type="text" name="password">
+								</ul>
+								<button type="submit">회원탈퇴</button>
+>>>>>>> refs/remotes/origin/master
 							</form>
 					</div>
 				</div>

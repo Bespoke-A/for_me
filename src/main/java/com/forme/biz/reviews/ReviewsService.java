@@ -7,8 +7,11 @@ public interface ReviewsService {
 	List<ReviewsVO> getReviewsList(); //리뷰 리스트
 	List<ReviewsVO> getMyReviewList(String id); //내 리뷰 리스트
 	void delRev(int reviewNum); // 리뷰 삭제
+<<<<<<< HEAD
 	void upRev(ReviewsVO vo); // 리뷰 수정
 	void insRev(ReviewsVO vo); //리뷰 쓰기
 	List<ReviewsVO> getCanRev(String id); // 작성 가능한 리뷰 조회
 	ReviewsVO searchRev(int myNum); // 작성 가능한 리뷰 작성 여부 조회
+=======
+>>>>>>> refs/remotes/origin/master
 }

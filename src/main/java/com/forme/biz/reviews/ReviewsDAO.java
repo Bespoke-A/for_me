@@ -18,6 +18,7 @@ public class ReviewsDAO {
 	//리뷰 리스트
 	public List<ReviewsVO> getReviewsList() {
 		System.out.println("===> MyBatis 사용 getReviewsList() 실행");
+<<<<<<< HEAD
 		return mybatis.selectList("reviews.getReviewsList");
 	}
 	//내 리뷰 리스트
@@ -51,6 +52,19 @@ public class ReviewsDAO {
 		System.out.println("===> searchRev() 실행");
 		ReviewsVO review = mybatis.selectOne("reviews.searchRev", myNum);
 		return review;
+=======
+		return mybatis.selectList("reviewsDAO.getReviewsList");
+	}
+	//내 리뷰 리스트
+	public List<ReviewsVO> getMyReviewList(String id) {
+		System.out.println("===> MyBatis 사용 getMyReviewList() 실행");
+		return mybatis.selectList("reviewsDAO.getMyReviewList", id);
+	}
+	//리뷰 삭제
+	public void delRev(int reviewNum) {
+		System.out.println("===> MyBatis 사용 delRev() 실행");
+		mybatis.delete("reviewsDAO.delRev", reviewNum);
+>>>>>>> refs/remotes/origin/master
 	}
 	
 }

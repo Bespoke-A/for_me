@@ -75,6 +75,7 @@
     			frm.subType.focus();
     			return false;
     		} 
+<<<<<<< HEAD
     		if(frm.allergy.value.trim() == null || frm.allergy.value.trim() == "") {
     			console.log("frm.allergy.value.trim() : " + frm.allergy.value.trim());
     			frm.allergy.value = "작성 예정입니다";
@@ -196,6 +197,124 @@
                                 <div class="col-12" id="btn-submit">
                                     <input type="submit" class="btn btn-primary w-25 py-3" value="등록" onclick="return noEmpty(this.form)">
                                     <a href="adminGetMenuList.do" class="btn btn-primary w-25 py-3">목록</a>
+=======
+    		if(frm.allergy.value.trim() == "") {
+    			frm.allergy.value = "작성 예정입니다";
+    		} 
+    		if(frm.recipe.value.trim() == "") {
+    			frm.recipe.value = "작성 예정입니다";
+    		} 
+    		if(frm.mComment.value.trim() == "") {
+    			frm.mComment.value = "작성 예정입니다";
+    		}
+    	}
+
+    
+    </script>
+</head>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+
+<!-- 탑바, 네비바 인클루드 -->
+<jsp:include page="/WEB-INF/views/include_h.jsp"/>
+
+
+    <!-- Page Header Start -->
+    <div class="container-fluid page-header py-5 mb-5">
+        <div class="container py-5">
+            <h1 class="display-3 text-white mb-3 animated slideInDown">메뉴등록</h1>
+            <!-- <nav aria-label="breadcrumb animated slideInDown">
+                 <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a class="text-white" href="#">Home</a></li>
+                    <li class="breadcrumb-item"><a class="text-white" href="#">Pages</a></li>
+                    <li class="breadcrumb-item text-white active" aria-current="page">Free Quote</li>
+                </ol>
+            </nav> -->
+        </div>
+    </div>
+    <!-- Page Header End -->
+
+
+    <!-- Quote Start -->
+    <div class="container-fluid bg-light overflow-hidden px-lg-0" style="margin: 6rem 0;">
+        <div class="container quote px-lg-0">
+            <div class="row g-0 mx-lg-0">
+                <div class="col-lg-6 ps-lg-0" style="min-height: 400px;">
+                    <div class="position-relative h-100 menuImage" id="image_container">
+                        <%-- <img class="position-absolute img-fluid w-100 h-100" src="resources/forMeImg/${menu.menuImg}" style="object-fit: cover;" alt=""> --%>
+                    </div> 
+                </div>
+                <div class="col-lg-6 quote-text py-5 wow fadeIn" data-wow-delay="0.5s">
+                    <div class="p-lg-5 pe-lg-0">
+                    	<form action="insertMenu.do" method="post" enctype="multipart/form-data">
+                            <div class="row g-3">
+                                <div class="col-12">
+                                    <input class="form-control border-0" placeholder=" 메뉴이름" name="menuName" id="menuName" >
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    <input type="number" class="form-control border-0" placeholder="메뉴아이디" style="height: 55px;" name="menuId" max="999">
+                                </div>
+                                <div class="col-12 col-sm-6">
+	                                <select class="form-select border-0 col-12" style="height: 55px;" id="menuType" name="menuType">
+	                                        <option selected value="0">메뉴타입 </option>
+	                                        <option value="1">1</option>
+	                                        <option value="2">2</option>
+	                                 </select>
+                                </div>
+                                <div class="col-12 col-sm-6">
+	                                <select class="form-select border-0 col-12" style="height: 55px;" id="subType" name="subType">
+	                                        <option selected value="0">가격타입 </option>
+	                                        <option value="6000">6000</option>
+	                                        <option value="8000">8000</option>
+	                                        <option value="10000">10000</option>
+	                                 </select>
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    <input type="number" class="form-control border-0" placeholder="탄수화물" style="height: 55px;" name="carbohydrate" value="0" max="9999">
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    <input type="number" class="form-control border-0" placeholder="단백질" style="height: 55px;" name="protein" value="0" max="9999">
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    <input type="number" class="form-control border-0" placeholder="지방" style="height: 55px;" name="fat" value="0" max="9999">
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    <input type="number" class="form-control border-0" placeholder="나트륨" style="height: 55px;" name="natrium" value="0" max="9999">
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    <input type="number" class="form-control border-0" placeholder="칼로리" style="height: 55px;" name="calories" value="0" max="9999">
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    <input type="number" class="form-control border-0" placeholder="무게" style="height: 55px;" name="weight" value="0" max="9999">
+                                </div>
+                                <div class="col-12">
+                                    <textarea class="form-control border-0" placeholder="알레르기" name="allergy"></textarea>
+                                </div>
+                                <div class="col-12">
+                                		<p>썸네일</p>
+                                    <input class="form-control border-0"  type="file"  id="uploadThumbnail"  name="thumbnailFile" accept="resources/*" onchange="setThumbnail(event)">
+                                </div>
+                              <div class="col-12">
+                                		<p>상품이미지</p>
+                                    <input type="file" class="form-control border-0" id="uploadImg" name="menuImgFile" accept="resources/*" onchange="setImage(event)">
+                                </div>
+                                <div class="col-12">
+                                    <textarea class="form-control border-0" placeholder="레시피" name="recipe"></textarea>
+                                </div>
+                                <div class="col-12">
+                                    <textarea class="form-control border-0" placeholder="상세내용" name="mComment"></textarea>
+                                </div>
+                                <div class="col-12" id="btn-submit">
+                                    <input type="submit" class="btn btn-primary w-25 py-3" value="등록" onclick="return noEmpty(this.form)">
+>>>>>>> refs/remotes/origin/master
                                 </div>
                             </div>
                         </form>
